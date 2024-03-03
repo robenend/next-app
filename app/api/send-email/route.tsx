@@ -7,6 +7,6 @@ export async function POST() {
     from: "",
     to: "",
     subject: "",
-    react: <WelcomeTemplate name="Mosh" />,
+    react: <WelcomeTemplate name="Robera" />,
   });
 }
