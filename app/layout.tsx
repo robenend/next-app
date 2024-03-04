@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Roboto, Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "./NavBar";
+import localFont from "next/font/local";
 import AuthProvider from "./auth/Provider";
 const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+});
+
+const poppins = localFont({
+  src: "../public/fonts/Poppins-Regular.ttf",
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   title: "Connect to our next app",
@@ -21,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="winter">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <AuthProvider>
           <NavBar />
           <main className="p-5">{children}</main>
